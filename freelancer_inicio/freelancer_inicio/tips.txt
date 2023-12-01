@@ -1,0 +1,282 @@
+                                    HTML
+                        ----------------------------
+-Si el elemento hijo de un elemento es un h(h1,h2,etc) se debe usar section:
+EXCEPCIÓN:Si ese h es el contenido principal, se usa main.
+Ej: 
+<main>
+<h2></h2>
+<section>
+<h3></h3>
+</section>
+</main>
+
+
+-Solo un main
+-Solo un h1
+
+-Hacer que el sitio web sea más rápido(que cargue lo más rápido posible la hoja de estilos):
+ <link rel="preload" href="css/styles.css" as="style" />
+
+-Se puede poner más de una clase añadiendo un espacio:
+<nav class="navegacion-principal contenedor">
+
+
+
+
+
+                                    css
+                        ----------------------------
+-REM:
+Unidad de medida. Para usarlo y poder reiniciar el tamaño del rem se añade un html en css y un body,
+un 1rem=10px pero se adaptan mejor a los dispositivos de hoy en día:
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size:16px;
+}
+
+-CSS aplicar a todos los párrafos hijos:
+.cliente > p{
+    color:blue;
+}
+
+-CSS combinación de descendientes(aplica a la clase que hay dentro de una clase):
+.cliente .nombre{
+    color:blue;
+}
+
+-:root (forma de almacenar variables en CSS):
+:root{
+--blanco:#ffffff;
+--oscuro: #212121;
+--primario: #ffc107;
+}
+Y al aplicarlo se pondria:
+.titulo{
+    color:var(primario);
+}
+De esta forma al querer cambiar algo, con cambiar lo del root, se cambiaría automáticamente en el 
+resto donde se haya aplicado.
+
+-display:block o inline:
+block: se coloca un elemento debajo de otro, sin importar tamaño, etc
+inline: se coloca un elemento a la derecha de otro una vez que haya tomado el 
+espacio que requiere
+
+
+
+****Especificidad****
+Cuanto más especifico sea un selector, es el que más se aplica, no en cascada como suele ser. Ej:
+
+h1.titulo span{
+    color:blue;  <--- se aplica este, ya que es más específico
+}
+.titulo span{
+    color:red;
+}
+span{
+    color:green;
+}
+EXCEPCIÓN:
+p#parrafo{
+    color:red;
+}
+p{
+    color:green!important; <---este !important pasa por encima de todo, por lo cual se aplicaría este
+}                               (AUNQUE NO ES RECOMENDABLE USARLO MUCHO)
+
+
+****Libreria Normalize****
+Debe ser lo primero que cargue tu web, debe estar el primero en el head. Para que en todos los navegadores
+se vea igual.
+
+
+****BEM(Bloques, Elementos, Modificadores)****
+.card{}
+card=Bloque
+.card__boton{}
+elemento=boton
+.card__boton--activo{}
+modificadores=boton--activo
+
+****Utility First****
+Las clases con una propiedad que describen que es lo que haría.
+Es una propiedad y un valor con clase.
+Ej:
+.text-center{}
+.color-red-100{}
+.bg-blue-200{}
+
+****Módulos****
+Defines el contenido principal y vas seleccionando cada uno de los elementos
+Ej:
+.card{}  <--principal
+.card h2{}
+.card img{}
+
+
+****Media Queries****
+Tamaño teléfono: 480px;
+Tamaño tablet: 768px;
+Tamaño pc: 1140px;+-
+Tamaño pantalla más resolución: 1440px;
+
+
+****Responsevily App****
+App donde poner tu web y ver como quedaría en diferentes dispositivos
+
+
+****BOX SIZING****
+html{
+    box-sizing:border-box;
+}
+*, *:before, *after{
+    box-sizing:inherit;
+}
+El aplicar esto hace que no se modifique el tamaño de las cajas al añadir padding 
+o margin
+
+*=selecciona todos los elementos
+
+****POSITION ABSOLUTE Y RELATIVE****
+-relative: el padre siempre debe tener posición relativa, para que el hijo se 
+pueda posicionar de forma absoluta
+-absolute: el hijo va a tomar el contenido del padre, de esta forma el hijo posicionaría
+el elemento en el punto que se elija dentro del contenido del padre
+
+Para hacer que se posicione sobre el total del contenido del padre :
+.hero{
+    position:relative;     <---padre
+}
+.contenido-hero{           <---hijo
+    position:absolute;
+    width:100%;
+    height:100%
+} (abarca todo el espacio disponible, desde lo que el padre le permita, ej:
+si hay un padding en el padre, será a partir de ese padding que el hijo podrá
+abarcar el espacio)
+
+o de otra forma :
+
+.contenido-hero{           <---hijo
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}(abarca todo el espacio disponible)
+
+
+****FLEXBOX****
+El contenido crece automáticamente.
+Solo tienes una dimensión, de derecha a izquierda o de arriba hacia abajo
+De esta forma alinearemos vertical y horizontalmente el texto de forma centrada
+
+.hero{
+    position:relative;     <---padre
+}
+.contenido-hero{           <---hijo
+    position:absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+****GRADIENT***
+Para hacer un degradado de color. Ej:
+body{
+    background-image:linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100% );
+}
+El 100% final es hasta donde quieres el degradado.
+
+En esta página puedes crear diferentes degradados :
+www.cssmatic.com
+
+****SOMBRAS****
+En esta página puedes crear diferentes sombras :
+www.cssmatic.com
+
+
+****CAN I USE****
+Página para ver si alguna propiedad es compatible con los navegadores
+
+
+****GRID****
+El contenido se agrupa dentro de un área definida.
+Tiene dos dimensiones de arriba hacia abajo y hacia los lados
+
+Para hacer tres columnas iguales:
+.servicios{
+  display: grid;
+  grid-template-columns: repeat( 3,1fr);  hay cuatro formas de hacer esto, pero esta es la mejor =
+  grid-template-columns: 33% 33% 33%; =
+  grid-template-columns:300px 300px 300px; =
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+Para poner resumido el tamaño de filas y columnas:
+.servicios{
+display: grid;
+grid:200px 800px;(rowspx, columnaspx)
+}
+
+Para hacer una separación de columnas se usa column-gap :
+.servicios{
+display: grid;
+grid:200px 800px;(rowspx, columnaspx)
+column-gap: 1rem;
+}
+
+Para posicionar un elemento se usa grid-column:
+ .campo:nth-child(2){
+grid-column: 1/ 3;// va de la fila 1 a la 3
+  }
+
+****CUANDO USAR FLEXBOX Y CUANDO GRID****
+Flexbox: Alinear o distribuir los elementos que están en los contenedores. Ej: nav
+Grid: Para definir el Layout de tu sitio web,como pueden ser las columnas o contenedores 
+de elementos.
+
+
+****INTERLINEADO****
+Para añadir espaciado entre lineas :
+.servicio p{
+  line-height: 2;  
+}
+
+*****TYPE DE FORMULARIO****
+Para dar estilo a un input en concreto, puedes pasar como argumento:
+.campo input[type='text']{
+    background-color:blue;
+}
+
+****PSEUDOSELECTOR****
+.campo:nth-child(2){ //añades a cual de los hijos quieres que se aplique
+
+  }
+
+****SCROLL ANIMACIÓN****
+Ej. al hacer el scroll con la rueda del ratón te lleva a contacto directamente
+:
+html {
+  scroll-snap-type: y mandatory; //va a hacer scroll snap de arriba hacia abajo
+                                para que sea de lado a lado sería x mandatory
+}
+
+Hay dos tipos de scroll snap:
+mandatory: das poco scroll y te lleva a la siguiente sección
+proximity: necesitas hacer más scroll para que te lleve a la siguiente sección
+
+Scroll Snap Align
+.servicios{
+  scroll-snap-align: center;
+}
+Scroll Snap Stop
+.servicios{
+  scroll-snap-align: center;
+  scroll-snap-stop: always; // para que siempre pare
+}

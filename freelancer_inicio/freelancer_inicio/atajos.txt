@@ -1,0 +1,54 @@
+                                        ATAJOS:
+                            -----------------------------
+                            
+-DUPLICA LO MISMO: SHIFT + ALT Y FLECHA HACIA ABAJO 
+-LINEA DE COMENTARIO, O BLOQUE SELECCIONANDOLO: CTRL(MANTENERLO PULSADO) + K --> + C  o ALT + SHIFT + A
+-PARA AÑADIR UNA CLASE IGUAL A VARIOS TAG IGUALES:SELECCIONAS EL 1º Y CNTRL + D --> Y 
+CUANDO HAYAS TERMINADO DE SELECCIONARLOS TODOS --> FLECHA A LA DERECHA, LUEGO A LA IZQUIERDA 
+Y ESCRIBES
+-PARA GENERAR VARIAS ETIQUETAS IGUALE PUEDES USAR EL NOMBRE DE ETIQUETA, SIN <> Y UN * POR EL NUMERO DE 
+VECES QUE QUIERAS QUE SE CREE
+
+General
+
+-Abrir paleta de comandos	Ctrl + Shift + P
+-Abrir archivo	Ctrl + P
+-Nueva ventana	Ctrl + Shift + N
+-Cerrar ventana	Ctrl + Shift + W
+-Ajustes del perfil	Ctrl + ,
+
+Usabilidad
+
+-Crear un nuevo archivo	Ctrl + N
+-Abrir archivo	Ctrl + O
+-Guardar archivo	Ctrl + S
+-Cerrar	Ctrl + F4
+-Abrir Terminal	Ctrl + '
+-Panel de problemas	Ctrl + Shift + M
+
+Edición básica
+
+-Cortar linea	Ctrl + X
+-Copiar linea	Ctrl + C
+-Borrar linea	Ctrl + Shift + K
+-Insertar linea abajo	Enter
+-Insertar linea arriba	Ctrl + Shift + Enter
+-Buscar en archivo abierto	Ctrl + F
+-Reemplazar	Ctrl + H
+-Linea de comentario	Ctrl + /
+-Bloque de comentario	Shift + Alt + A
+-Salto de linea	Alt + Z
+-Seleccionar lineas	Alt + Click Mouse
+-Tabular linea	Tab
+-Destabular linea	Shift + Tab
+
+Pantalla
+
+-Acercar Zoom	Ctrl + +
+-Alejar Zoom	Ctrl + -
+-Barra lateral	Ctrl + B
+-Abrir debug	Ctrl + Shift + D
+-Panel de salida	Ctrl + Shift + U
+-Control de source	Ctrl + Shift + G
+-Acceder a extensiones	Ctrl + Shift + X
+-Abrir terminal integrado	Ctrl + Shift + Ñ
