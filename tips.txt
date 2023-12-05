@@ -94,6 +94,14 @@ se vea igual.
 
 
 ****BEM(Bloques, Elementos, Modificadores)****
+-bloques= son contenedores <p class>='cliente'>...</>
+-elementos= parte del bloque, y dependen de él, utilizan el nombre de bloque y después doble guión bajo:
+<p class>='cliente___nombre'>...</>
+-modificadores=avisa que el elemento o el bloque tendrá un diseño diferente:
+<p class>='cliente___nombre--ceo'>...</>
+(añade --ceo para que sea el dueño de la empresa(ceo) más grande por ser más importante)
+En Css:cliente___nombre--ceo{...}
+
 .card{}
 card=Bloque
 .card__boton{}
@@ -279,4 +287,29 @@ Scroll Snap Stop
 .servicios{
   scroll-snap-align: center;
   scroll-snap-stop: always; // para que siempre pare
+}
+
+****TRANSICIÓN*****
+Para dar transición de colores al hacer un hover :
+
+.formulario__submit{
+transition: background-color 5s ease;
+}
+.formulario__submit:hover {
+    font-size: 2.4rem;
+    cursor: pointer;
+    background-color: var(--secundarioOscuro)
+}
+
+Primero seleccionas a que elemento quieres darle la transición, el tiempo 
+y la animación y puedes añadir un retardo e incluso anidar varias animaciones:
+
+.formulario__submit{
+transition: background-color 5s ease, font-size  5s ease 0.5;
+}
+
+.formulario__submit:hover {
+    font-size: 2.4rem;
+    cursor: pointer;
+    background-color: var(--secundarioOscuro)
 }
