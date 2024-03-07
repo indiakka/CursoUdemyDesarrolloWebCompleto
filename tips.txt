@@ -21,6 +21,10 @@ Ej:
 <nav class="navegacion-principal contenedor">
 
 
+-Para crear más de una etiqueta con la misma clase puedes hacer:
+Por ejemplo 3 a con la misma clase:
+a.navegacion__enlace*3
+
 
 
 
@@ -313,3 +317,7 @@ transition: background-color 5s ease, font-size  5s ease 0.5;
     cursor: pointer;
     background-color: var(--secundarioOscuro)
 }
+
+*****BACKGOUND-POSITION****
+    background-position: center center;
+Se ponen dos center para posicionarlo en vertical y orizontal.
