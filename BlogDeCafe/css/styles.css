@@ -2,20 +2,20 @@
     --fuenteHeading: 'PT Sans', sans-serif;
     --fuenteParrafos: 'Open Sans', sans-serif;
 
-    --primario: #784d3c;
-    --gris: #e1e1e1;
-    --blanco: #fff;
-    --negro: #000;
+    --primario: #784D3C;
+    --gris: #E1E1E1;
+    --blanco: #FFFFFF;
+    --negro: #000000;
 }
 
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    /* 1rem =10 px */
+    /* 1 rem = 10px */
 }
 
 *,
-* ::before,
+*::before,
 *::after {
     box-sizing: inherit;
 }
@@ -26,10 +26,12 @@ body {
     line-height: 2;
 }
 
-/** GLOBLES **/
+
+/* Globales */
 .contenedor {
     width: min(90%, 120rem);
     margin: 0 auto;
+
 }
 
 a {
@@ -64,7 +66,7 @@ img {
     max-width: 100%;
 }
 
-/** UTILIDADES **/
+/* Utilidades */
 .no-margin {
     margin: 0;
 }
@@ -77,14 +79,20 @@ img {
     text-align: center;
 }
 
-/** HEADER **/
-.header {
+/* Header */
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+
+.header {
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* se ponen dos center para posicionarlo en vertical y orizontal */
 }
 
 .header__texto {
@@ -135,11 +143,10 @@ img {
     text-align: center;
     font-size: 1.8rem;
     color: var(--blanco);
+
 }
 
-/**CONTENIDO**/
-
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .contenido-principal {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -165,8 +172,9 @@ img {
     padding: 1rem 3rem;
     font-size: 1.8rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: bold;
     margin-bottom: 2rem;
+    border: none;
 }
 
 @media (min-width: 768px) {
@@ -175,11 +183,14 @@ img {
     }
 }
 
+.boton:hover {
+    cursor: pointer;
+}
+
 .boton--primario {
     background-color: var(--negro);
 }
 
-/**SIDEBAR**/
 .boton--secundario {
     background-color: var(--primario);
 }
@@ -198,23 +209,160 @@ img {
     margin-bottom: 0;
 }
 
-.widget-curso__label {
+.widget-curso__label,
+.curso__label {
     font-family: var(--fuenteHeading);
     font-weight: bold;
 }
 
-.widget-curso__info {
+.widget-curso__info,
+.curso__info {
     font-weight: normal;
 }
 
 .widget-curso__label,
-.widget-curso__info {
+.widget-curso__info,
+.curso__label,
+.curso__info {
     font-size: 2rem;
 }
 
-/**FOOTER**/
 .footer {
     background-color: var(--negro);
     padding-bottom: 3rem;
     margin-top: 4rem;
+}
+
+
+/* Sobre nosotros */
+.sobre-nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.webp .sobre-nosotros__imagen {
+    background-image: url(../img/nosotros.webp);
+}
+
+.no-webp .sobre-nosotros__imagen {
+    background-image: url(../img/nosotros.jpg);
+}
+
+.sobre-nosotros__imagen {
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+per pantalles petites
+-----
+| i |
+-----
+| t |
+-----
+
+quan s'aplica el media query "@media (min-width: 768 px)"
+---------
+| i | t |
+---------
+*/
+
+@media (min-width: 768px) {
+    .sobre-nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/* Cursos */
+
+.curso {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--gris);
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+}
+
+
+.webp .curso__imagen1 {
+    background-image: url(../img/curso1.webp);
+}
+
+.no-webp .curso__imagen1 {
+    background-image: url(../img/curso1.jpg);
+}
+
+.webp .curso__imagen2 {
+    background-image: url(../img/curso2.webp);
+}
+
+.no-webp .curso__imagen2 {
+    background-image: url(../img/curso2.jpg);
+}
+
+.webp .curso__imagen3 {
+    background-image: url(../img/curso3.webp);
+}
+
+.no-webp .curso__imagen3 {
+    background-image: url(../img/curso3.jpg);
+}
+
+.curso__imagen {
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 768px) {
+    .curso {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso:last-of-type {
+    border: none;
+}
+
+/* Contacto */
+
+.contacto-bg {
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+}
+
+
+
+/* Formulario */
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+}
+
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--gris);
+}
+
+.campo__field--textarea {
+    height: 20rem;
 }
